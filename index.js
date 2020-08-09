@@ -1,7 +1,6 @@
 //importar express
 const express = require('express');
 const conectarBD = require ('./config/db');
-const bodyParser      = require('body-parser');
 const cors = require('cors'); //npm i cors
 
 //crear el servidor
@@ -15,12 +14,9 @@ const app = express();
     
 
     //Habilitar express.json
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(express.json({extended: true}));
 
-// Globals Routes
-const routes = require('./routes'); // Load Routes
-    app.use('/api/', routes());
+
 
 //puerto en el que correra la app
 const port = process.env.port || 4000;
