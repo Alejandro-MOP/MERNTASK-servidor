@@ -10,19 +10,19 @@ const app = express();
     conectarBD();
 
     //habilitar cors
-    //app.use(cors());
+    app.use(cors());
 
     //Headers del cors
-    app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-        res.header("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization, X-Request-With");
-        res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-        next();
-      });
+    // app.use(function(req, res, next) {
+    //     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    //     res.header("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization, X-Request-With");
+    //     res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+    //     next();
+    //   });
     
 
     //Habilitar express.json
-    app.use(express.json({extended: true}));
+    app.use(express.json({ extended: true }));
 
 
 
